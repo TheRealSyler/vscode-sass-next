@@ -1,0 +1,364 @@
+{
+  "name": "sass-next",
+  "displayName": "Sass Next",
+  "description": "Indented Sass",
+  "version": "0.0.1",
+  "icon": "resources/images/sass-logo-seal.png",
+  "publisher": "syler",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheRealSyler/vscode-sass-next"
+  },
+  "bugs": "https://github.com/TheRealSyler/vscode-sass-next/issues/new?assignees=TheRealSyler&labels=bug&template=bug_report.md&title=",
+  "engines": {
+    "vscode": "^1.30.0"
+  },
+  "activationEvents": [
+    "onLanguage:sass",
+    "onView:snippets"
+  ],
+  "main": "./dist/extension",
+  "categories": [
+    "Programming Languages",
+    "Formatters"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Sass Next",
+      "properties": {
+        "sass.snippets.path": {
+          "type": "string",
+          "default": "none",
+          "description": "path for the global snippets file."
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "sass",
+          "title": "Sass",
+          "icon": "resources/images/Sass_Logo_Color.svg"
+        }
+      ]
+    },
+    "views": {
+      "sass": [
+        {
+          "id": "snippets",
+          "name": "Snippets"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "sass.preview",
+        "title": "Preview",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.abbreviations",
+        "title": "Abbreviations",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.refreshEntry",
+        "title": "Refresh",
+        "icon": {
+          "light": "resources/light/refresh.svg",
+          "dark": "resources/dark/refresh.svg"
+        },
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.addFromSelection",
+        "title": "Add Snippet From Selection",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.delete",
+        "title": "Delete",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.edit",
+        "title": "Edit",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.addFolder",
+        "title": "Add Folder",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.moveUp",
+        "title": "⯅ Move Up",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.moveDown",
+        "title": "⯆ Move Down",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.copy",
+        "title": "Copy",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.cut",
+        "title": "Cut",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.paste",
+        "title": "Paste",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.insert",
+        "title": "Insert",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.insertFolder",
+        "title": "Insert Folder",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.openFile",
+        "title": "Open File",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.recalculatePosition",
+        "title": "Recalculate Positions",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.addFromFileMixins",
+        "title": "Add Mixin Snippets From File ",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.addFromFileVariables",
+        "title": "Add Variable Snippets From File",
+        "category": "Sass"
+      },
+      {
+        "command": "sass.tree.addFromFile",
+        "title": "Add Snippets From File",
+        "category": "Sass"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "sass.tree.addFromSelection",
+        "key": "shift+alt+d",
+        "mac": "shift+alt+d",
+        "when": "resourceExtname == .sass && editorHasSelection"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "sass.tree.refreshEntry",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.addFromSelection",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.delete",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.edit",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.addFolder",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.moveUp",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.moveDown",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.copy",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.cut",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.paste",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.insert",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.insertFolder",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.openFile",
+          "when": "false"
+        },
+        {
+          "command": "sass.tree.recalculatePosition",
+          "when": "false"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "sass.tree.refreshEntry",
+          "when": "view == snippets",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "sass.tree.addFromSelection",
+          "group": "0_below_nav",
+          "when": "viewItem != snippet"
+        },
+        {
+          "command": "sass.tree.insert",
+          "group": "navigation",
+          "when": "viewItem == snippet"
+        },
+        {
+          "command": "sass.tree.insertFolder",
+          "group": "navigation",
+          "when": "viewItem != snippet"
+        },
+        {
+          "command": "sass.tree.delete",
+          "group": "2_edit",
+          "when": "viewItem != root"
+        },
+        {
+          "command": "sass.tree.edit",
+          "group": "2_edit",
+          "when": "viewItem != root"
+        },
+        {
+          "command": "sass.tree.addFolder",
+          "group": "0_below_nav",
+          "when": "viewItem != snippet"
+        },
+        {
+          "command": "sass.tree.moveUp",
+          "group": "4_move",
+          "when": "viewItem != root"
+        },
+        {
+          "command": "sass.tree.moveDown",
+          "group": "4_move",
+          "when": "viewItem != root"
+        },
+        {
+          "command": "sass.tree.cut",
+          "group": "2_copyPaste",
+          "when": "viewItem != root"
+        },
+        {
+          "command": "sass.tree.copy",
+          "group": "2_copyPaste",
+          "when": "viewItem != root"
+        },
+        {
+          "command": "sass.tree.paste",
+          "group": "2_copyPaste",
+          "when": "viewItem != snippet"
+        },
+        {
+          "command": "sass.tree.openFile",
+          "group": "navigation",
+          "when": "viewItem == root"
+        },
+        {
+          "command": "sass.tree.recalculatePosition",
+          "group": "4_pos",
+          "when": "viewItem != snippet"
+        },
+        {
+          "command": "sass.tree.addFromFile",
+          "group": "0_below_nav",
+          "when": "viewItem != snippet"
+        },
+        {
+          "command": "sass.tree.addFromFileMixins",
+          "group": "1_addFrom",
+          "when": "viewItem!= snippet"
+        },
+        {
+          "command": "sass.tree.addFromFileVariables",
+          "group": "1_addFrom",
+          "when": "viewItem != snippet"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "sass.tree.addFromSelection",
+          "group": "navigation",
+          "when": "resourceExtname == .sass && editorHasSelection"
+        },
+        {
+          "command": "sass.tree.addFromFile",
+          "group": "4_addFrom",
+          "when": "resourceExtname == .sass"
+        },
+        {
+          "command": "sass.tree.addFromFileMixins",
+          "group": "5_addFrom",
+          "when": "resourceExtname == .sass"
+        },
+        {
+          "command": "sass.tree.addFromFileVariables",
+          "group": "5_addFrom",
+          "when": "resourceExtname == .sass"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "webpack --mode production",
+    "webpack": "webpack --mode development",
+    "webpack-dev": "webpack --mode development --watch",
+    "compile": "npm run webpack",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "@types/node": "^8.10.25",
+    "@types/node-sass": "^4.11.0",
+    "@types/ws": "^6.0.2",
+    "chalk": "2.4.2",
+    "copy-webpack-plugin": "^5.0.4",
+    "ts-loader": "^6.0.4",
+    "tslint": "^5.8.0",
+    "typescript": "^3.2.2",
+    "vscode": "^1.1.26",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {
+    "@types/sass": "^1.16.0",
+    "chokidar": "^3.0.2",
+    "express": "^4.17.1",
+    "sass": "^1.22.10",
+    "ws": "^7.1.1"
+  }
+}

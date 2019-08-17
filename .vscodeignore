@@ -1,0 +1,13 @@
+.vscode/**
+.github/**
+typings/**
+out/test/**
+test/**
+node_modules/**
+out/**
+src/**
+**/*.map
+.gitignore
+tsconfig.json
+webpack.config.js
+todo

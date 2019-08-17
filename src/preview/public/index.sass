@@ -1,0 +1,247 @@
+// sass --watch src/preview/public:src/preview/public
+
+@import ./preview.mixins
+$bg: #111111
+$patina: #699
+$font: lighten($patina, 25)
+$t: #00000000
+$at: #00000050
+$hoverT: #aaaaaa20
+$activeT: #aaaaaa50
+$light-gray: #444
+$middle-gray: #353535
+$gray: #333
+$dark-gray: #252525
+$light-blue: #4474af
+$item-selected: #252525
+$shadow: #191919
+$blue: #25a
+$red: #d22
+$yellow: #ea4
+$light-blue-gray: #32373D
+$dark-blue: #14181D
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+*
+  background: $bg
+  color: $font
+  font-family: $font-family
+  ::-webkit-scrollbar
+    width: 10px
+    height: 10px
+  ::-webkit-scrollbar-track
+    background: $light-gray
+  ::-webkit-scrollbar-thumb
+    background: $patina
+    transition: all 250ms ease
+  ::-webkit-scrollbar-thumb:hover
+    background: lighten($patina, 15)
+
+._sass_btn
+  margin: 0 20px
+  font-weight: 500
+  @include Btn ($border: false, $bg: $light-gray, $mainColor: $patina, $fontColor: #eee)
+  @include Btn-Swipe ($color: #eee, $reverse: false, $distance: 100px)
+
+#_sass_container
+  padding: 10px
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  #_sass_header
+    background: $dark-gray
+    height: 40px
+    overflow: auto
+    border-radius: 5px
+    margin-bottom: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+
+  #_sass_content
+    margin-bottom: 10px
+    height: calc(100vh - 200px)
+    display: flex
+    justify-content: space-between
+
+    #_sass_properties
+      width: 260px
+      background: $dark-gray
+      overflow: auto
+      border-radius: 5px
+      padding: 10px
+
+      ._sass_selector
+        background: $t
+        margin: 0 10px
+        width: 240px
+        word-break: break-all
+        margin-bottom: 10px
+
+      ._sass_property
+        margin-bottom: 10px
+        border: 1px solid transparentize($patina, 0.5)
+        border-radius: 5px
+        padding: 5px
+        background: $t
+        display: grid
+        grid-template-columns: 150px auto
+
+        ._sass_property_name
+          background: $t
+          margin: 0 10px
+          width: 140px
+          word-break: break-all
+        input
+          width: 70px
+          font-family: consolas
+          height: 16px
+    #_sass_preview_box
+      width: calc(100vw - 310px)
+      background: $dark-gray
+      display: flex
+      justify-content: center
+      align-items: center
+      overflow: auto
+      border-radius: 5px
+  #_sass_message_box
+    background: $dark-gray
+    height: 120px
+    overflow: auto
+    border-radius: 5px
+    ._sass_message
+      background: $hoverT
+      padding: 5px 10px
+      margin: 10px
+      border-radius: 5px
+
+#_sass_focusout
+  display: none
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  z-index: 10
+  background: transparentize($bg, 0.3)
+
+._sass_show_form
+  background: $gray
+  position: fixed
+  border-radius: 5px
+  width: 95vw
+  height: calc(100vh - 100px)
+  z-index: 20
+  left: 50%
+  top: 20px
+  animation: forms-start 200ms forwards 0s ease-out
+
+  @keyframes forms-start
+    from
+      transform: translate(-50%, -100%)
+    to
+      transform: translate(-50%, 0%)
+
+._sass_show_form_btn
+  position: absolute
+  top: 100px
+  left: 20px
+
+._sass_show_form_msg
+  margin: 0 20px
+  margin-top: 45px
+  text-align: center
+  background: $t
+._sass_show_form_compact
+  width: 300px
+  height: 150px
+  top: calc(50vh - 200px) !important
+
+._sass_text_box
+  width: 100%
+  height: 50%
+  padding: 12px 20px
+  box-sizing: border-box
+  border: 1px solid $gray
+  border-radius: 4px
+  background-color: $bg
+  resize: none
+  font-family: consolas
+  outline: none
+  position: relative
+
+  &:focus
+    border: 1px solid $patina
+
+._sass_loader
+  border: 5px solid $light-gray
+  border-top: 5px solid $patina
+  border-radius: 50%
+  background: $t
+  width: 60px
+  height: 60px
+  animation: spin 1.5s linear infinite
+  margin: 50px
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+._sass_err
+  color: $red
+._sass_inp
+  border: none
+  outline: none
+  background: transparentize($patina, 0.9)
+  padding: 4px 10px 4px 10px
+  border-bottom: solid 2px $light-gray
+  transition: all 200ms
+  border-radius: 2px
+  &:hover
+    border-bottom: solid 2px lighten($gray, 10)
+  &:focus
+    border-bottom: solid 2px $patina
+
+.inp::placeholder
+  user-select: none
+.inp:focus::placeholder
+  color: #00000000
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button
+  -webkit-appearance: none
+  margin: 0
+input[type="number"]
+  -moz-appearance: textfield
+
+._sass_checkbox
+  background-color: $dark-gray
+  border: solid 1px $font
+  border-radius: 2px
+  outline: none
+  appearance: none
+  -webkit-appearance: none
+  -moz-appearance: none
+  width: 16px
+  height: 16px
+  cursor: pointer
+  position: relative
+  &:checked
+    &::after
+      display: block
+      background: $light-gray
+  &::after
+    position: absolute
+    display: none
+    content: ""
+    left: 5px
+    top: 0px
+    width: 3px
+    height: 9px
+    border: solid white
+    border-width: 0 2px 2px 0
+    -webkit-transform: rotate(45deg)
+    -ms-transform: rotate(45deg)
+    transform: rotate(45deg)

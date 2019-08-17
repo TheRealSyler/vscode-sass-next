@@ -1,0 +1,76 @@
+@mixin Btn-Swipe ($color, $reverse: true, $distance: 100px)
+  &:active
+    &::after
+      @if $reverse
+        animation: Btn-Swipe-Anim-right 250ms forwards ease
+      @else
+        animation: Btn-Swipe-Anim-left 250ms forwards ease
+  &::after
+    content: ' '
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    background: $t
+    left: 0
+    filter: blur( 5px )
+    width: 10px
+    height: 100%
+  @keyframes Btn-Swipe-Anim-left
+    0%
+      background: lighten($color, 20)
+      transform: translateX( 0px )
+    99%
+      background: lighten($color, 20)
+    100%
+      background: $t
+      transform: translateX( $distance )
+  @keyframes Btn-Swipe-Anim-right
+    0%
+      background: lighten($color, 20)
+      transform: translateX( $distance )
+    99%
+      background: lighten($color, 20)
+    100%
+      background: $t
+      transform: translateX( 0px )
+@mixin Btn ($border, $bg, $mainColor, $fontColor: $font)
+  background: $bg
+  color: $fontColor
+  @if $border == true
+    border: 1px solid desaturate($mainColor, 60)
+  @else
+    border: none
+  ///R
+  padding: 0 8px
+  text-align: center
+  padding-bottom: 4px
+  border-top-left-radius: 2px
+  border-top-right-radius: 2px
+  user-select: none
+  cursor: pointer
+  font-size: 0.85rem
+  position: relative
+  transition: all 250ms ease
+  width: 80px
+  overflow: hidden
+  &:hover
+    background: darken($bg, 5)
+  @if $border == true
+    border-bottom: 1px solid $mainColor
+  &:active
+    background: $mainColor
+    @if $border == true
+      border-bottom: 1px solid $mainColor
+  &:focus
+    outline: $mainColor
+    &::after
+      content: ' '
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      width: 100%
+      filter: blur( 10px )
+      background: transparentize($mainColor, 0.7)
