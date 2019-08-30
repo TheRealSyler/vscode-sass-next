@@ -28,7 +28,7 @@ export function activate(context: ExtensionContext) {
   let TreeDisposables: Disposable[] = [];
   const TreeProvider = new TreeSnippetProvider(context);
   SnippetProviderUtility.setProvider(TreeProvider);
-  TreeDisposables[0] = window.registerTreeDataProvider('snippets', TreeProvider);
+  TreeDisposables[0] = window.registerTreeDataProvider('sass-snippets', TreeProvider);
   TreeDisposables[1] = commands.registerCommand('sass.tree.refreshEntry', () => {
     TreeProvider.refresh(true);
   });

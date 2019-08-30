@@ -24,6 +24,8 @@ export class SassTreeItem extends TreeItem {
   }
 
   get iconPath() {
+    // console.log('a', __dirname, '####', __filename);
+    // console.log('aa', join(__dirname, 'resources', 'light', 'folder.svg'));
     switch (this.data.type) {
       case 'root':
       case 'folder':

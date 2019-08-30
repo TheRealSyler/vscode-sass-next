@@ -1,41 +1,23 @@
-[![](https://vsmarketplacebadge.apphb.com/version-short/syler.sass-indented.svg)](https://marketplace.visualstudio.com/items?itemName=syler.sass-indented)
-[![](https://vsmarketplacebadge.apphb.com/installs-short/syler.sass-indented.svg)](https://marketplace.visualstudio.com/items?itemName=syler.sass-indented)
-[![GitHub stars](https://img.shields.io/github/stars/TheRealSyler/vscode-sass-indented.svg?style=social&label=Star%20on%20Github)](https://github.com/TheRealSyler/vscode-sass-indented)
-[![GitHub issues](https://img.shields.io/github/issues-raw/TheRealSyler/vscode-sass-indented?color=%232a2)](https://github.com/TheRealSyler/vscode-sass-indented)
-[![Maintenance](https://img.shields.io/maintenance/yes/2019.svg)](https://GitHub.com/TheRealSyler/vscode-sass-indented/graphs/commit-activity)
-<!-- [![](https://vsmarketplacebadge.apphb.com/rating-short/syler.sass-indented.svg)](https://marketplace.visualstudio.com/items?itemName=syler.sass-indented) -->
-# *Indented Sass syntax highlighting, autocomplete & Formatter for VSCode*
+[![](https://vsmarketplacebadge.apphb.com/version-short/syler.sass-next.svg)](https://marketplace.visualstudio.com/items?itemName=syler.sass-next)
+[![](https://vsmarketplacebadge.apphb.com/installs-short/syler.sass-next.svg)](https://marketplace.visualstudio.com/items?itemName=syler.sass-next)
+[![GitHub issues](https://img.shields.io/github/issues-raw/TheRealSyler/vscode-sass-next?color=%232a2)](https://github.com/TheRealSyler/vscode-sass-next)
+[![Maintenance](https://img.shields.io/maintenance/yes/2019.svg)](https://GitHub.com/TheRealSyler/vscode-sass-next/graphs/commit-activity)
+<!-- [![GitHub stars](https://img.shields.io/github/stars/TheRealSyler/vscode-sass-next.svg?style=social&label=Star%20on%20Github)](https://github.com/TheRealSyler/vscode-sass-next) -->
+<!-- [![](https://vsmarketplacebadge.apphb.com/rating-short/syler.sass-next.svg)](https://marketplace.visualstudio.com/items?itemName=syler.sass-next) -->
+# *Sass Next*
 
 ## ***Installing***
 Search for Sass from the extension installer within VSCode or put this into the command palette.
 ```cmd
-ext install sass-indented
+ext install sass-next
 ```
 
 ## **Features**
 ___
-> Syntax Highlighting
 
-> AutoCompletions
+> Sass Snippets
 
-> Formatter
-
-> Abbreviations and Sass Snippets, are experiments, i might remove them.
-
-### 1.6.2 New Additions
-* the formatter now sets the space between a property and its value.
-
->Note: The snippets have been removed if you still want to use them, you can get them [here](https://github.com/TheRealSyler/vscode-sass-indented/blob/a3ffc7a005c2ccd82e7c50ccf391ba5d22afee13/snippets/sass.json).
-
-### **Formatter**
-___
-There are two special character sequences that give commands to the formatter.
-1. `///S` The formatter ignores empty lines until the next class, id or mixin.
-2. `///R` The formatter uses the beginning of the command as the current indentation level.
-
-Options can be set in the [Configuration](#Configuration)
-
-![Formatter Example](https://media.giphy.com/media/fXhWNUfxr2bFNqgHzk/giphy.gif)
+> Abbreviations
 
 ### **Abbreviations**
 ___
@@ -90,41 +72,22 @@ There is a slight downside to this which is that you can't have something like `
 ## **Configuration**
 ___
 
-Configuration options can be set in the `Sass (Indented)` section of VSCode settings or by editing your `settings.json` directly.
+Configuration options can be set in the `Sass Next` section of VSCode settings or by editing your `settings.json` directly.
 
 ### General
-| Option                       | Type    | Default                                      | Description                                                                                               |
-| ---------------------------- | ------- | -------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `sass.disableAutoIndent`     | boolean | false                                        | Stop the extension from automatically indenting when pressing Enter                                       |
-| `sass.disableUnitCompletion` | boolean | true                                         | adds units to the intellisense completions if false.                                                      |
-| `sass.snippets.path`         | string  | `"none"`                                     | path for the global snippets file.                                                                        |
-| `sass.andStared`             | array   | `["active", "focus",  "hover", "nth-child"]` | items in this array will be at the top of the completion list (only for items that show after the & sign) |
-
-### Formatter
-| Option                         | Type    | Default | Description                                                    |
-| ------------------------------ | ------- | ------- | -------------------------------------------------------------- |
-| `sass.format.enabled`          | boolean | true    | enables the sass formatter.                                    |
-| `sass.format.deleteWhitespace` | boolean | true    | removes trailing whitespace.                                   |
-| `sass.format.deleteEmptyRows`  | boolean | true    | removes empty rows.                                            |
-| `sass.format.deleteCompact`    | boolean | true    | removes empty rows that are near a property.                   |
-| `sass.format.setPropertySpace` | boolean | true    | If true space between the property: value, is always set to 1. |
-
+| Option               | Type   | Default  | Description                        |
+| -------------------- | ------ | -------- | ---------------------------------- |
+| `sass.snippets.path` | string | `"none"` | path for the global snippets file. |
 
 ## **Bugs**
 ___
-If you encounter any bugs please [open a new issue](https://github.com/TheRealSyler/vscode-sass-indented/issues/new?assignees=TheRealSyler&labels=bug&template=bug_report.md&title=).
+If you encounter any bugs please [open a new issue](https://github.com/TheRealSyler/vscode-sass-next/issues/new?assignees=TheRealSyler&labels=bug&template=bug_report.md&title=).
 
 ## **Contributing**
 
->Note: [next](https://github.com/TheRealSyler/vscode-sass-indented/tree/next) is the experimental/newest branch, [master](https://github.com/TheRealSyler/vscode-sass-indented) should be stable.
-
-The source for this extension is available on [github](https://github.com/TheRealSyler/vscode-sass-indented). If anyone feels that there is something missing or would like to suggest improvements please [open a new issue](https://github.com/TheRealSyler/vscode-sass-indented/issues/new?assignees=TheRealSyler&labels=enhancement&template=feature_request.md&title=) or send a pull request! Instructions for running/debugging extensions locally [here](https://code.visualstudio.com/docs/extensions/overview).
+The source for this extension is available on [github](https://github.com/TheRealSyler/vscode-sass-next). If anyone feels that there is something missing or would like to suggest improvements please [open a new issue](https://github.com/TheRealSyler/vscode-sass-next/issues/new?assignees=TheRealSyler&labels=enhancement&template=feature_request.md&title=) or send a pull request! Instructions for running/debugging extensions locally [here](https://code.visualstudio.com/docs/extensions/overview).
 
 ## **Credits**
-
-- Thanks to [@robinbentley](https://github.com/robinbentley) for creating and maintaining the project until version 1.5.1.
-- Property/Value Autocompletion - [Stanislav Sysoev (@d4rkr00t)](https://github.com/d4rkr00t) for his work on [language-stylus](https://github.com/d4rkr00t/language-stylus) extension
-- Syntax highlighting - [https://github.com/P233/Syntax-highlighting-for-Sass](https://github.com/P233/Syntax-highlighting-for-Sass)
 - Sass seal logo - [http://sass-lang.com/styleguide/brand](http://sass-lang.com/styleguide/brand)
 
 ## Changelog

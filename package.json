@@ -15,13 +15,10 @@
   },
   "activationEvents": [
     "onLanguage:sass",
-    "onView:snippets"
+    "onView:sass-snippets"
   ],
   "main": "./dist/extension",
-  "categories": [
-    "Programming Languages",
-    "Formatters"
-  ],
+  "categories": [],
   "contributes": {
     "configuration": {
       "type": "object",
@@ -46,8 +43,8 @@
     "views": {
       "sass": [
         {
-          "id": "snippets",
-          "name": "Snippets"
+          "id": "sass-snippets",
+          "name": "Sass Snippets"
         }
       ]
     },
@@ -222,7 +219,7 @@
       "view/title": [
         {
           "command": "sass.tree.refreshEntry",
-          "when": "view == snippets",
+          "when": "view == sass-snippets",
           "group": "navigation"
         }
       ],
@@ -230,82 +227,82 @@
         {
           "command": "sass.tree.addFromSelection",
           "group": "0_below_nav",
-          "when": "viewItem != snippet"
+          "when": "view == sass-snippets && viewItem != snippet"
         },
         {
           "command": "sass.tree.insert",
           "group": "navigation",
-          "when": "viewItem == snippet"
+          "when": "view == sass-snippets && viewItem == snippet"
         },
         {
           "command": "sass.tree.insertFolder",
           "group": "navigation",
-          "when": "viewItem != snippet"
+          "when": "view == sass-snippets && viewItem != snippet"
         },
         {
           "command": "sass.tree.delete",
           "group": "2_edit",
-          "when": "viewItem != root"
+          "when": "view == sass-snippets && viewItem != root"
         },
         {
           "command": "sass.tree.edit",
           "group": "2_edit",
-          "when": "viewItem != root"
+          "when": "view == sass-snippets && viewItem != root"
         },
         {
           "command": "sass.tree.addFolder",
           "group": "0_below_nav",
-          "when": "viewItem != snippet"
+          "when": "view == sass-snippets && viewItem != snippet"
         },
         {
           "command": "sass.tree.moveUp",
           "group": "4_move",
-          "when": "viewItem != root"
+          "when": "view == sass-snippets && viewItem != root"
         },
         {
           "command": "sass.tree.moveDown",
           "group": "4_move",
-          "when": "viewItem != root"
+          "when": "view == sass-snippets && viewItem != root"
         },
         {
           "command": "sass.tree.cut",
           "group": "2_copyPaste",
-          "when": "viewItem != root"
+          "when": "view == sass-snippets && viewItem != root"
         },
         {
           "command": "sass.tree.copy",
           "group": "2_copyPaste",
-          "when": "viewItem != root"
+          "when": "view == sass-snippets && viewItem != root"
         },
         {
           "command": "sass.tree.paste",
           "group": "2_copyPaste",
-          "when": "viewItem != snippet"
+          "when": "view == sass-snippets && viewItem != snippet"
         },
         {
           "command": "sass.tree.openFile",
           "group": "navigation",
-          "when": "viewItem == root"
+          "when": "view == sass-snippets && viewItem == root"
         },
         {
           "command": "sass.tree.recalculatePosition",
           "group": "4_pos",
-          "when": "viewItem != snippet"
+          "when": "view == sass-snippets && viewItem != snippet"
         },
         {
           "command": "sass.tree.addFromFile",
           "group": "0_below_nav",
-          "when": "viewItem != snippet"
+          "when": "view == sass-snippets && viewItem != snippet"
         },
         {
           "command": "sass.tree.addFromFileMixins",
           "group": "1_addFrom",
-          "when": "viewItem!= snippet"
+          "when": "view == sass-snippets && viewItem!= snippet"
         },
         {
           "command": "sass.tree.addFromFileVariables",
           "group": "1_addFrom",
-          "when": "viewItem != snippet"
+          "when": "view == sass-snippets && viewItem != snippet"
         }
       ],
       "editor/context": [

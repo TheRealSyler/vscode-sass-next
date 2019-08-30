@@ -44,7 +44,8 @@ const config = {
   },
   plugins: [
     new CopyPlugin([
-      { from: 'src/preview/public', to: 'public', ignore: ['*.sass', '*mixins.css*', '*.map'] }
+      { from: 'src/preview/public', to: 'public', ignore: ['*.sass', '*mixins.css*', '*.map'] },
+      { from: 'resources', to: 'resources' }
     ]),
 
   ]
