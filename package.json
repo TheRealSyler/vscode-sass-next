@@ -15,6 +15,7 @@
   },
   "activationEvents": [
     "onLanguage:sass",
+    "onLanguage:vue",
     "onView:sass-snippets"
   ],
   "main": "./dist/extension",
